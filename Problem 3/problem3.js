@@ -110,24 +110,24 @@ function register() {
     var person = elt.dropdown[elt.dropdown.selectedIndex].text;
 
     if (person == "Employee") {
-        var p1 = Object.create(employee);
-        p1.run("$social")(elt.identification.value);
+        var guy = Object.create(employee);
+        guy.run("$social")(elt.identification.value);
     } else if (person == "Customer") {
-        var p1 = Object.create(customer);
-        p1.run("$customerNumber")(elt.identification.value);
+        var guy = Object.create(customer);
+        guy.run("$customerNumber")(elt.identification.value);
     } else {
         alert("error");
     }
 
-    p1.run("$firstName")(elt.fName.value);
-    p1.run("$lastName")(elt.lName.value);
-    p1.run("$emailAddress")(elt.email.value);
+    guy.run("$firstName")(elt.fName.value);
+    guy.run("$lastName")(elt.lName.value);
+    guy.run("$emailAddress")(elt.email.value);
 
     if (person == "Customer") {
-        alert("Name: " + p1.run("firstName") + ' ' + p1.run("lastName") + '\nEmail: ' + p1.run("emailAddress") + "\n" + p1.run('idType') + ": " + p1.run("customerNumber") + "\nRegistration Complete!");
+        alert("Name: " + guy.run("firstName") + ' ' + guy.run("lastName") + '\nEmail: ' + guy.run("emailAddress") + "\n" + guy.run('idType') + ": " + guy.run("customerNumber") + "\n \nRegistration Complete!");
     }
     else if (person == "Employee") {
-        alert("Name: " + p1.run("firstName") + ' ' + p1.run("lastName") + '\nEmail: ' + p1.run("emailAddress") + "\n" + p1.run('idType') + ": " + p1.run("social") + "\nRegistration Complete!");
+        alert("Name: " + guy.run("firstName") + ' ' + guy.run("lastName") + '\nEmail: ' + guy.run("emailAddress") + "\n" + guy.run('idType') + ": " + guy.run("social") + "\n \nRegistration Complete!");
     }
     else {
         alert("error");
