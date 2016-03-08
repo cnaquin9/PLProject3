@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title> Problem 3 </title>
+    <link ref="stylesheet" href="looks.css">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="problem3.js"></script>
+</head>
+<body bgcolor="#add8e6">
+<center>
+    <h1 style="color:navy;"> Registration for CatCo database! </h1>
+    <form id="regForm" action="" method="POST">
+        <table border="15">
+            <tr>
+                <td> CatCo Customer/Employee?</td>
+                <td>
+                    <select name="dropdown">
+                        <option selected="selected"> Customer</option>
+                        <option> Employee</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td> First Name:</td>
+                <td><input name="fName" type="text" size="40"/></td>
+            </tr>
+            <tr>
+                <td> Last Name:</td>
+                <td><input name="lName" type="text" size="40"/></td>
+            </tr>
+            <tr>
+                <td> Email:</td>
+                <td><input name="email" type="email" size="40"/></td>
+            </tr>
+            <tr>
+                <td> CatCo Number /Social Security Number:</td>
+                <td><input name="identification" type="text" size="40"/></td>
+            </tr>
+            <tr>
+                <td>
+                    <div align="right"><input type="reset" value="Clear form"/></div>
+                </td>
+                <td>
+                    <div align="right">
+                        <button type="button" onClick="register()">Register</button>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+    </form>
+</center>
+</body>
+</html>

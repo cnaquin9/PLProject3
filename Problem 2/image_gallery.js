@@ -1,15 +1,23 @@
-$(document).ready(function() { //function called when page is ready
-    $("#image_list a").each(function () { //goes through each image in list
-        var imageURL = $(this).attr("href"); //gets the URL for each image
-        var imageTitle = $(this).attr("title"); //gets the caption for each image
+$(document).ready(function () {
+    // preload images
+    $("#image_list a").each(function () {
+        var swappedImage = new Image();
+        swappedImage.src = $(this).attr("href");
     });
 
-    $("#image_list a").click(function (evt) { //goes to the image when you click the word
-        $("#caption").innerHTML = $(this).imageTitle; //sets the caption to the title of each image
-        $("#gallery").innerHTML = $(this).imageURL; //sets the url to the url of each image
+    // set up event handlers for links
+    $("#image_list a").click(function (evt) {
+        // swap image
+        var imageURL = $(this).attr("href");
+        $("#image").attr("src", imageURL);
 
-        evt.preventDefault(); //prevents default method
-    }); //end click
+        // swap caption
+        var caption = $(this).attr("title");
+        $("#caption").text(caption);
 
-    $("li:first-child a").focus(); //changes focus to next tab
-}); //end ready
+        evt.preventDefault();
+    });
+
+    $("li:first-child a").focus();
+
+});
