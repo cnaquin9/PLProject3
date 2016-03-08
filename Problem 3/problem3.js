@@ -123,14 +123,24 @@ function register() {
     guy.run("$lastName")(elt.lName.value);
     guy.run("$emailAddress")(elt.email.value);
 
+
     if (person == "Customer") {
-        alert("Name: " + guy.run("firstName") + ' ' + guy.run("lastName") + '\nEmail: ' + guy.run("emailAddress") + "\n" + guy.run('idType') + ": " + guy.run("customerNumber") + "\n \nRegistration Complete!");
+        if (guy.run("firstName") != "" && guy.run("lastName") != "" && guy.run("emailAddress") != "" && guy.run("customerNumber") != "") {
+            alert("Name: " + guy.run("firstName") + ' ' + guy.run("lastName") + '\nEmail: ' + guy.run("emailAddress") + "\n" + guy.run('idType') + ": " + guy.run("customerNumber") + "\n \nRegistration Complete!")
+        }
+        else {
+            alert("Missing information! Please double-check form.");
+        }
     }
+
+
     else if (person == "Employee") {
-        alert("Name: " + guy.run("firstName") + ' ' + guy.run("lastName") + '\nEmail: ' + guy.run("emailAddress") + "\n" + guy.run('idType') + ": " + guy.run("social") + "\n \nRegistration Complete!");
-    }
-    else {
-        alert("error");
+        if (guy.run("firstName") != "" && guy.run("lastName") != "" && guy.run("emailAddress") != "" && guy.run("social") != "") {
+            alert("Name: " + guy.run("firstName") + ' ' + guy.run("lastName") + '\nEmail: ' + guy.run("emailAddress") + "\n" + guy.run('idType') + ": " + guy.run("social") + "\n \nRegistration Complete!")
+        }
+        else {
+            alert("Missing information! Please double-check form.");
+        }
     }
 
 }
