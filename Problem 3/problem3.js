@@ -1,23 +1,23 @@
 /**
- * Created by samanthahuang on 3/7/16.
+ * Created by samanthahuang on 3/6/16.
  */
 var person = function () {
-    var data = {
+    var info = {
         firstName: "",
-        $firstName: function (n) {
-            data.firstName = n;
+        $firstName: function (p) {
+            info.firstName = p;
         },
         lastName: "",
         $lastName: function (n) {
-            data.lastName = n;
+            info.lastName = n;
         },
         emailAddress: "",
         $emailAddress: function (n) {
-            data.emailAddress = n;
+            info.emailAddress = n;
         },
         iden: "",
         $id: function (n) {
-            data.iden = n;
+            info.iden = n;
         }
     };
 
@@ -26,29 +26,29 @@ var person = function () {
     f = new F();
 
     f.run = function (e) {
-        return data[e];
+        return info[e];
     };
 
     return f;
 }();
 
 var employee = function (p) {
-    var data = {
+    var info = {
         firstName: "",
         $firstName: function (n) {
-            data.firstName = n;
+            info.firstName = n;
         },
         lastName: "",
         $lastName: function (n) {
-            data.lastName = n;
+            info.lastName = n;
         },
         emailAddress: "",
         $emailAddress: function (n) {
-            data.emailAddress = n;
+            info.emailAddress = n;
         },
         social: "",
         $social: function (n) {
-            data.social = n;
+            info.social = n;
         },
         idType: "Social Security"
     };
@@ -56,11 +56,10 @@ var employee = function (p) {
     var F = function () {
     };
     F.prototype = p;
-    //p.run("id")(data[social]);
     f = new F();
 
     f.run = function (e) {
-        var r = data[e];
+        var r = info[e];
         if (r === undefined) return F.prototype.run(e);
         else return r;
     };
@@ -70,22 +69,22 @@ var employee = function (p) {
 }(person);
 
 var customer = function (p) {
-    var data = {
+    var info = {
         firstName: "",
         $firstName: function (n) {
-            data.firstName = n;
+            info.firstName = n;
         },
         lastName: "",
         $lastName: function (n) {
-            data.lastName = n;
+            info.lastName = n;
         },
         emailAddress: "",
         $emailAddress: function (n) {
-            data.emailAddress = n;
+            info.emailAddress = n;
         },
         customerNumber: 0,
         $customerNumber: function (n) {
-            data.customerNumber = n;
+            info.customerNumber = n;
         },
         idType: "Customer Number"
     };
@@ -96,7 +95,7 @@ var customer = function (p) {
     f = new F();
 
     f.run = function (e) {
-        var r = data[e];
+        var r = info[e];
         if (r === undefined) return F.prototype.run(e);
         else return r;
     };
@@ -126,20 +125,20 @@ function register() {
 
     if (person == "Customer") {
         if (guy.run("firstName") != "" && guy.run("lastName") != "" && guy.run("emailAddress") != "" && guy.run("customerNumber") != "") {
-            alert("Name: " + guy.run("firstName") + ' ' + guy.run("lastName") + '\nEmail: ' + guy.run("emailAddress") + "\n" + guy.run('idType') + ": " + guy.run("customerNumber") + "\n \nRegistration Complete!")
+            alert("This was the customer info entered:\n \nName: " + guy.run("firstName") + ' ' + guy.run("lastName") + '\nEmail: ' + guy.run("emailAddress") + "\n" + guy.run('idType') + ": " + guy.run("customerNumber") + "\n \nRegistration Complete! Meow!")
         }
         else {
-            alert("Missing information! Please double-check form.");
+            alert("Missing information! Please double-check form. Meow.");
         }
     }
 
 
     else if (person == "Employee") {
         if (guy.run("firstName") != "" && guy.run("lastName") != "" && guy.run("emailAddress") != "" && guy.run("social") != "") {
-            alert("Name: " + guy.run("firstName") + ' ' + guy.run("lastName") + '\nEmail: ' + guy.run("emailAddress") + "\n" + guy.run('idType') + ": " + guy.run("social") + "\n \nRegistration Complete!")
+            alert("This was the employee info entered:\n \nName: " + guy.run("firstName") + ' ' + guy.run("lastName") + '\nEmail: ' + guy.run("emailAddress") + "\n" + guy.run('idType') + ": " + guy.run("social") + "\n \nRegistration Complete! Meow!")
         }
         else {
-            alert("Missing information! Please double-check form.");
+            alert("Missing information! Please double-check form. Meow.");
         }
     }
 
